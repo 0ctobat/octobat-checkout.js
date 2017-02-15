@@ -38,32 +38,17 @@ var
 // Javascript Bundling
 gulp.task('js', function() {
   
-  var a = p.browserify({
-    entries: src,
-    insertGlobals : true,
-    standalone: 'OctobatCheckout',
-    debug: true
-  });
+  gulp.src('index.js')
+    .pipe(p.concat('octobat-checkout.js'))
+    .pipe(p.buffer())
+    .pipe(p.stripDebug())
+    .pipe(gulp.dest(js.out));
   
-  a.bundle().on('error', handleError)
-    .pipe(p.source('octobat-checkout.min.js'))
+  gulp.src('index.js')
+    .pipe(p.concat('octobat-checkout.min.js'))
     .pipe(p.buffer())
     .pipe(p.stripDebug())
     .pipe(p.uglify(uglifyOpts))
-    .pipe(gulp.dest(js.out));
-  
-  
-  var b = p.browserify({
-    entries: src,
-    insertGlobals : true,
-    standalone: 'OctobatCheckout',
-    debug: true
-  });
-  
-  b.bundle().on('error', handleError)
-    .pipe(p.source('octobat-checkout.js'))
-    .pipe(p.buffer())
-    .pipe(p.stripDebug())
     .pipe(gulp.dest(js.out));
   
 });
