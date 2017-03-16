@@ -107,7 +107,7 @@
     
     OctobatCheckoutIFrameJS.prototype = {
       _host: function() {
-        return host_url + "/form"
+        return host_url + "/v2"
       },
       _attributes: function() {
         var e, t;
