@@ -235,7 +235,7 @@
         }));
       },
       close: function() {
-        this._iframe instanceof r && (this._iframe._el.remove(), this._iframe = null, octobatCheckoutApp.iframeHasLoaded(!1))
+        this._iframe instanceof OctobatCheckoutIFrameJS && (this._iframe._el.remove(), this._iframe = null, octobatCheckoutApp.iframeHasLoaded(!1))
       },
       initCheckout: function() {
         this._iframe = new OctobatCheckoutIFrameJS({key: this.octobat_pkey});
