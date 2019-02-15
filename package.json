@@ -1,6 +1,6 @@
 {
   "name": "octobat-checkout.js",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "description": "octobat-checkout.js lib. Creates a modal built-in payment form, binded to the Octobat service to take payments after computing tax rates in real time",
   "main": "index.js",
   "scripts": {
